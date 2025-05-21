@@ -48,12 +48,12 @@ const ApiKeyCard = ({ apiKey }: ApiKeyCardProps) => {
   }
 
   return (
-    <div className="api-card space-y-2 text-sm">
+    <div className="api-card space-y-1 text-xs p-2">
       <div className="flex justify-between items-start">
         <div>
-          <h3 className="text-sm font-semibold">{apiKey.displayName}</h3>
-          <p className="text-xs text-white/60">{apiKey.name}</p>
-          <div className="text-xs text-brand-purple">{categoryName}</div>
+          <h3 className="text-xs font-semibold">{apiKey.displayName}</h3>
+          <p className="text-[10px] text-white/60">{apiKey.name}</p>
+          <div className="text-[10px] text-brand-purple">{categoryName}</div>
         </div>
         
         <div className="flex space-x-0.5">
@@ -61,31 +61,31 @@ const ApiKeyCard = ({ apiKey }: ApiKeyCardProps) => {
             variant="ghost"
             size="icon"
             onClick={() => setIsEditing(true)}
-            className="h-6 w-6 rounded-full hover:bg-white/10"
+            className="h-5 w-5 rounded-full hover:bg-white/10"
           >
-            <Edit className="h-3 w-3" />
+            <Edit className="h-2.5 w-2.5" />
           </Button>
           <Button
             variant="ghost"
             size="icon"
             onClick={() => deleteApiKey(apiKey.id)}
-            className="h-6 w-6 rounded-full hover:bg-white/10 hover:text-red-400"
+            className="h-5 w-5 rounded-full hover:bg-white/10 hover:text-red-400"
           >
-            <Trash2 className="h-3 w-3" />
+            <Trash2 className="h-2.5 w-2.5" />
           </Button>
         </div>
       </div>
       
-      <div className="border border-white/10 rounded-lg p-2 bg-white/5">
+      <div className="border border-white/10 rounded-md p-1.5 bg-white/5">
         <div className="flex justify-between items-center">
-          <code className="text-xs text-brand-light font-mono break-all">
+          <code className="text-[10px] text-brand-light font-mono break-all">
             {formatKey(apiKey.key)}
           </code>
           <Button
             variant="ghost"
             size="icon"
             onClick={() => setShowKey(!showKey)}
-            className="ml-1 h-5 w-5 shrink-0"
+            className="ml-1 h-4 w-4 shrink-0"
           >
             <span className="sr-only">{showKey ? 'Hide' : 'Show'}</span>
             <svg
@@ -94,7 +94,7 @@ const ApiKeyCard = ({ apiKey }: ApiKeyCardProps) => {
               viewBox="0 0 24 24"
               strokeWidth={1.5}
               stroke="currentColor"
-              className="w-3 h-3"
+              className="w-2.5 h-2.5"
             >
               {showKey ? (
                 <path
@@ -120,18 +120,18 @@ const ApiKeyCard = ({ apiKey }: ApiKeyCardProps) => {
             variant="outline"
             size="sm"
             onClick={() => copyApiKey(apiKey.key)}
-            className="text-xs h-6 border-white/10 hover:bg-white/10 px-2"
+            className="text-[10px] h-5 border-white/10 hover:bg-white/10 px-1.5"
           >
-            <Copy className="h-2.5 w-2.5 mr-1" />
+            <Copy className="h-2 w-2 mr-1" />
             Copy
           </Button>
           <Button
             variant="outline"
             size="sm"
             onClick={() => copyExportCommand(apiKey.name, apiKey.key)}
-            className="text-xs h-6 border-white/10 hover:bg-white/10 px-2"
+            className="text-[10px] h-5 border-white/10 hover:bg-white/10 px-1.5"
           >
-            <Copy className="h-2.5 w-2.5 mr-1" />
+            <Copy className="h-2 w-2 mr-1" />
             Export
           </Button>
         </div>
@@ -141,9 +141,9 @@ const ApiKeyCard = ({ apiKey }: ApiKeyCardProps) => {
             variant="ghost"
             size="sm"
             onClick={() => window.open(apiKey.url, '_blank')}
-            className="text-xs h-6 px-2"
+            className="text-[10px] h-5 px-1.5"
           >
-            <ExternalLink className="h-2.5 w-2.5 mr-1" />
+            <ExternalLink className="h-2 w-2 mr-1" />
             Docs
           </Button>
         )}

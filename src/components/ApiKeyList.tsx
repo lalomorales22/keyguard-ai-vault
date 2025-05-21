@@ -23,8 +23,8 @@ const ApiKeyList = () => {
   
   return (
     <>
-      <div className="flex items-center justify-between p-3 border-b border-white/10">
-        <h1 className="text-lg font-semibold">
+      <div className="flex items-center justify-between py-2 px-3 border-b border-white/10">
+        <h1 className="text-sm font-semibold">
           {selectedCategory 
             ? `${filteredApiKeys.length} API Key${filteredApiKeys.length !== 1 ? 's' : ''}`
             : 'All API Keys'}
@@ -32,27 +32,27 @@ const ApiKeyList = () => {
         <Button
           onClick={() => setIsAddDialogOpen(true)}
           size="sm"
-          className="bg-brand-purple hover:bg-brand-purple-dark text-xs"
+          className="bg-brand-purple hover:bg-brand-purple-dark h-6 text-xs"
         >
           <Plus className="mr-1 h-3 w-3" />
           New Key
         </Button>
       </div>
       
-      <div className="flex-1 overflow-y-auto p-3">
+      <div className="flex-1 overflow-y-auto p-2">
         {filteredApiKeys.length > 0 ? (
-          <div className="grid grid-cols-1 gap-2">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
             {filteredApiKeys.map((apiKey) => (
               <ApiKeyCard key={apiKey.id} apiKey={apiKey} />
             ))}
           </div>
         ) : (
           <div className="flex flex-col items-center justify-center h-full text-center">
-            <div className="w-12 h-12 bg-white/5 rounded-full flex items-center justify-center mb-3">
-              <Plus className="h-5 w-5 text-white/40" />
+            <div className="w-8 h-8 bg-white/5 rounded-full flex items-center justify-center mb-2">
+              <Plus className="h-4 w-4 text-white/40" />
             </div>
-            <h3 className="text-md font-medium mb-1">No API Keys</h3>
-            <p className="text-xs text-white/60 max-w-md mb-3">
+            <h3 className="text-sm font-medium mb-1">No API Keys</h3>
+            <p className="text-xs text-white/60 max-w-md mb-2">
               {searchQuery 
                 ? "No API keys match your search query" 
                 : "Add your first API key to get started"}
@@ -60,7 +60,7 @@ const ApiKeyList = () => {
             <Button 
               onClick={() => setIsAddDialogOpen(true)}
               size="sm"
-              className="bg-brand-purple hover:bg-brand-purple-dark text-xs"
+              className="bg-brand-purple hover:bg-brand-purple-dark h-6 text-xs"
             >
               <Plus className="mr-1 h-3 w-3" />
               Add API Key

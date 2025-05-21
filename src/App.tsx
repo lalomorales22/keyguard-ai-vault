@@ -11,20 +11,26 @@ import NotFound from "./pages/NotFound";
 const AppContent = () => {
   const { isAuthenticated } = useApp();
   
-  return isAuthenticated ? <Dashboard /> : <LoginScreen />;
+  return (
+    <div className="app-container">
+      {isAuthenticated ? <Dashboard /> : <LoginScreen />}
+    </div>
+  );
 };
 
 const App = () => (
   <AppProvider>
     <TooltipProvider>
-      <Toaster />
-      <Sonner />
-      <BrowserRouter>
-        <Routes>
-          <Route path="/" element={<AppContent />} />
-          <Route path="*" element={<NotFound />} />
-        </Routes>
-      </BrowserRouter>
+      <div className="macOS-app">
+        <Toaster />
+        <Sonner />
+        <BrowserRouter>
+          <Routes>
+            <Route path="/" element={<AppContent />} />
+            <Route path="*" element={<NotFound />} />
+          </Routes>
+        </BrowserRouter>
+      </div>
     </TooltipProvider>
   </AppProvider>
 );
