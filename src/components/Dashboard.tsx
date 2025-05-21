@@ -6,7 +6,9 @@ const Dashboard = () => {
   return (
     <div className="flex h-screen overflow-hidden bg-background text-foreground">
       <Sidebar />
-      <ApiKeyList />
+      <div className="flex-1 overflow-hidden flex flex-col">
+        <ApiKeyList />
+      </div>
     </div>
   );
 };

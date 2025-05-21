@@ -24,7 +24,7 @@
     --border: 240 3.7% 15.9%;
     --input: 240 3.7% 15.9%;
     --ring: 252 80% 74%;
-    --radius: 0.75rem;
+    --radius: 0.5rem;
 
     --sidebar-background: 240 10% 3.9%;
     --sidebar-foreground: 240 4.8% 95.9%;
@@ -79,6 +79,6 @@
   }
 
   .api-card {
-    @apply bg-secondary rounded-xl p-4 transition-all duration-200 hover:shadow-lg hover:shadow-brand-purple/10 hover:scale-[1.01] border border-brand-purple/20;
+    @apply bg-secondary rounded-lg p-3 transition-all duration-200 hover:shadow-md hover:shadow-brand-purple/10 border border-brand-purple/20;
   }
 }

@@ -62,8 +62,8 @@ const LoginScreen = () => {
     return (
       <div className="fixed inset-0 flex items-center justify-center bg-brand-dark">
         <div className="text-center">
-          <h1 className="text-4xl font-bold text-gradient-primary mb-4">whereMYAPIKEY?</h1>
-          <div className="w-12 h-12 rounded-full border-4 border-brand-purple border-t-transparent animate-spin mx-auto"></div>
+          <h1 className="text-2xl font-bold text-gradient-primary mb-3">whereMYAPIKEY?</h1>
+          <div className="w-8 h-8 rounded-full border-3 border-brand-purple border-t-transparent animate-spin mx-auto"></div>
         </div>
       </div>
     );
@@ -79,12 +79,12 @@ const LoginScreen = () => {
       }}
     >
       <div className="absolute inset-0 bg-black/50 backdrop-blur-sm"></div>
-      <div className="relative z-10 glass-morphism p-8 w-full max-w-md rounded-2xl animate-fade-in">
-        <h1 className="text-4xl font-bold text-gradient-primary text-center mb-8">whereMYAPIKEY?</h1>
+      <div className="relative z-10 glass-morphism p-5 w-full max-w-xs rounded-xl animate-fade-in">
+        <h1 className="text-2xl font-bold text-gradient-primary text-center mb-4">whereMYAPIKEY?</h1>
         
-        <form onSubmit={handleSubmit} className="space-y-6 animate-slide-up">
-          <div className="space-y-2">
-            <label htmlFor="password" className="text-sm font-medium text-white/80">
+        <form onSubmit={handleSubmit} className="space-y-4 animate-slide-up">
+          <div className="space-y-1">
+            <label htmlFor="password" className="text-xs font-medium text-white/80">
               Enter your password
             </label>
             <Input
@@ -92,7 +92,7 @@ const LoginScreen = () => {
               type="password"
               value={password}
               onChange={(e) => setPassword(e.target.value)}
-              className="bg-white/10 border-white/20 text-white"
+              className="bg-white/10 border-white/20 text-white h-8 text-sm"
               placeholder="Password"
               autoFocus
             />
@@ -100,12 +100,13 @@ const LoginScreen = () => {
           
           <Button
             type="submit"
-            className="w-full bg-brand-purple hover:bg-brand-purple-dark text-white font-medium"
+            size="sm"
+            className="w-full bg-brand-purple hover:bg-brand-purple-dark text-white font-medium text-xs py-1 h-7"
           >
             Unlock
           </Button>
           
-          <p className="text-xs text-center text-white/60 mt-4">
+          <p className="text-xs text-center text-white/60 mt-2">
             Secure API Key Management
           </p>
         </form>
