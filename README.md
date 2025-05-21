@@ -1,10 +1,10 @@
 # KeyGuard AI Vault 🔑
 
-**A super secure application for storing and managing your API keys, built with Lovable.dev.**
+**A super secure application for storing and managing your API keys.**
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT) [![GitHub issues](https://img.shields.io/github/issues/lalomorales22/keyguard-ai-vault)](https://github.com/lalomorales22/keyguard-ai-vault/issues) [![GitHub forks](https://img.shields.io/github/forks/lalomorales22/keyguard-ai-vault)](https://github.com/lalomorales22/keyguard-ai-vault/network) [![GitHub stars](https://img.shields.io/github/stars/lalomorales22/keyguard-ai-vault)](https://github.com/lalomorales22/keyguard-ai-vault/stargazers)
 
-KeyGuard AI Vault is designed to provide a robust and secure environment for developers and teams to store, manage, and access their sensitive API keys. This project is developed and managed using the [Lovable.dev](https://lovable.dev) platform, streamlining development and deployment.
+KeyGuard AI Vault is designed to provide a robust and secure environment for developers and teams to store, manage, and access their sensitive API keys.
 
 ## 🌟 Overview
 
@@ -12,7 +12,7 @@ In the world of AI and interconnected services, managing API keys securely is pa
 
 ## ✨ Features
 
-* **🔒 Secure Storage:** Utilizes strong encryption mechanisms to protect your API keys. *(Specifics may depend on Lovable platform capabilities or custom backend extensions)*
+* **🔒 Secure Storage:** Utilizes strong encryption mechanisms to protect your API keys.
 * **🔑 Access Control:** Granular control over who can access which keys, managed via an authentication system.
 * **📝 Easy Management:** Intuitive interface for adding, viewing, updating, and revoking API keys, leveraging a rich set of UI components.
 * **📊 Data Visualization (Potentially):** May include dashboards or charts for key usage insights (inferred from `recharts`).
@@ -27,7 +27,7 @@ In the world of AI and interconnected services, managing API keys securely is pa
 
 ## 🛠️ Technology Stack
 
-This project is built with a modern frontend stack, facilitated by the Lovable platform:
+This project is built with a modern frontend stack:
 
 * **Core Framework:** React `18.3.1`
 * **Build Tool:** Vite `5.4.1`
@@ -58,19 +58,14 @@ This project is built with a modern frontend stack, facilitated by the Lovable p
     * `react-resizable-panels` (Resizable panels)
     * `vaul` (Drawer component)
 * **Linting/Formatting:** ESLint
-* **Development & Deployment Platform:** [Lovable.dev](https://lovable.dev) (Project URL: [https://lovable.dev/projects/751032e4-d747-4ca8-8a5b-04501707b58d](https://lovable.dev/projects/751032e4-d747-4ca8-8a5b-04501707b58d))
 
-*(Note: Backend services, database, and core encryption mechanisms are typically managed by the Lovable platform. If extending with a custom backend, those technologies would be listed separately.)*
+*(Note: You will need to define and manage your own backend services, database, and core encryption mechanisms.)*
 
 ## ⚙️ Installation & Development
 
-This project is managed via Lovable.dev, offering several ways to edit and run the code:
+You can edit and run the code using several methods:
 
-1.  **Using Lovable Platform (Recommended):**
-    * Visit your [Lovable Project](https://lovable.dev/projects/751032e4-d747-4ca8-8a5b-04501707b58d) to edit and manage the application.
-    * Changes made via Lovable are automatically committed to this GitHub repository.
-
-2.  **Local Development (Using your preferred IDE):**
+1.  **Local Development (Using your preferred IDE):**
     * **Prerequisites:**
         * Node.js & npm (install with [nvm](https://github.com/nvm-sh/nvm#installing-and-updating))
         * Git
@@ -92,12 +87,12 @@ This project is managed via Lovable.dev, offering several ways to edit and run t
         * `npm run lint`: Lints the codebase using ESLint.
         * `npm run preview`: Serves the production build locally for preview.
 
-3.  **Directly in GitHub:**
+2.  **Directly in GitHub:**
     * Navigate to the desired file(s) in the repository.
     * Click the "Edit" button (pencil icon).
     * Make your changes and commit them.
 
-4.  **Using GitHub Codespaces:**
+3.  **Using GitHub Codespaces:**
     * Navigate to the main page of your repository.
     * Click "Code" -> "Codespaces" tab -> "New codespace".
     * Edit files within the Codespace, then commit and push.
@@ -110,22 +105,25 @@ This project is managed via Lovable.dev, offering several ways to edit and run t
     VITE_APP_TITLE="KeyGuard AI Vault (Local)"
     VITE_API_ENDPOINT_EXAMPLE="/api/v1"
     ```
-* **Server-side secrets** (like a master `ENCRYPTION_KEY` for the vault, database credentials, etc.) are managed within the Lovable platform's environment settings for the deployed application. Refer to Lovable's documentation for specifics on managing secrets.
+* **Server-side secrets** (like a master `ENCRYPTION_KEY` for the vault, database credentials, etc.) will need to be managed according to your chosen deployment strategy and backend setup.
 
 ## 🚀 Deployment
 
-Deployment of this project is streamlined through the Lovable platform:
+Deployment of this project will depend on your chosen hosting provider and backend infrastructure. You can build the static assets using `npm run build` and then deploy them to any static hosting service or integrate them with your backend server.
 
-1.  Open your [Lovable Project](https://lovable.dev/projects/751032e4-d747-4ca8-8a5b-04501707b58d).
-2.  Navigate to **Share -> Publish**.
-
-For connecting a custom domain to your Lovable project, refer to their documentation: [Setting up a custom domain](https://docs.lovable.dev/tips-tricks/custom-domain#step-by-step-guide).
+Consider platforms like:
+* Vercel
+* Netlify
+* AWS Amplify
+* Google Firebase Hosting
+* Railway
+* Or your own server infrastructure.
 
 ## 🚀 Usage
 
 *(This section should describe how a user interacts with the KeyGuard AI Vault application itself, once it's running.)*
 
-1.  Navigate to the application URL (either your Lovable project URL or your custom domain).
+1.  Navigate to the application URL (once deployed).
 2.  The application will present a **Login Screen**. Register a new user account or log in if you have existing credentials.
 3.  Upon successful authentication, you will be directed to the **Dashboard**.
 4.  Use the dashboard to:
@@ -139,14 +137,14 @@ For connecting a custom domain to your Lovable project, refer to their documenta
 
 Security is the cornerstone of KeyGuard AI Vault.
 
-* **Strong Encryption:** API keys should be encrypted at rest and in transit. The specifics of this implementation will depend on how Lovable handles data persistence and any custom backend logic.
-* **Input Validation:** All user inputs must be validated (likely using `zod` with `react-hook-form`) to prevent common web vulnerabilities.
-* **Environment Variables:** Never hardcode secrets in your frontend code. Use environment variables managed by Lovable for backend/build-time secrets, and `VITE_` prefixed variables for client-side configuration.
-* **HTTPS:** Lovable typically serves projects over HTTPS. Ensure this is always the case.
-* **Dependency Management:** Keep dependencies up-to-date via `npm update` and review them for vulnerabilities. Lovable may also provide tools or insights for this.
-* **Authentication:** The application has a clear authentication flow (`LoginScreen` vs. `Dashboard` based on `isAuthenticated` state from `AppContext`). Ensure this is robust.
+* **Strong Encryption:** API keys must be encrypted at rest (in your database) and in transit (using HTTPS). You will need to implement the encryption logic in your backend.
+* **Input Validation:** All user inputs must be validated (likely using `zod` with `react-hook-form` on the frontend, and corresponding validation on the backend) to prevent common web vulnerabilities.
+* **Environment Variables:** Never hardcode secrets in your frontend code. Use `VITE_` prefixed variables for client-side configuration and manage backend secrets securely in your deployment environment.
+* **HTTPS:** Ensure your application is always served over HTTPS in production.
+* **Dependency Management:** Keep dependencies up-to-date via `npm update` and review them for vulnerabilities.
+* **Authentication:** The application has a clear authentication flow (`LoginScreen` vs. `Dashboard` based on `isAuthenticated` state from `AppContext`). Ensure your backend authentication and authorization logic is robust.
 
-**IMPORTANT:** If your application design involves a master encryption key that *you* manage (even if configured within Lovable), that key is critical. **Losing it could mean losing access to all stored API keys.** Store it securely and back it up in a safe, offline location. Consult Lovable documentation on best practices for managing such secrets within their platform.
+**IMPORTANT:** If your application design involves a master encryption key, that key is critical. **Losing it could mean losing access to all stored API keys.** Store it securely (e.g., using a secrets manager service) and back it up in a safe, offline location.
 
 ## 🤝 Contributing
 
@@ -170,8 +168,7 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 Lalo Morales - [@lalomorales22](https://twitter.com/lalomorales22)
 Project Link: [https://github.com/lalomorales22/keyguard-ai-vault](https://github.com/lalomorales22/keyguard-ai-vault)
-Lovable Project: [https://lovable.dev/projects/751032e4-d747-4ca8-8a5b-04501707b58d](https://lovable.dev/projects/751032e4-d747-4ca8-8a5b-04501707b58d)
 
 ---
 
-*This README has been updated to reflect project management via Lovable.dev and specific technologies from your `package.json` and `App.tsx`. Please review and customize further as needed.*
+*Please review and customize this README further as needed for your project.*
